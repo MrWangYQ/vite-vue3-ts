@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -10,9 +6,24 @@ import HelloWorld from './components/HelloWorld.vue'
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
+    <HelloWorld ref="HWTRef" msg="Vite + Vue" />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
+
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import HelloWorld from './components/HelloWorld.vue'
+
+// 能推断出类型
+const HWTRef = ref<InstanceType<typeof HelloWorld> | null>(null)
+// 推断不出类型 只有一些静态方法
+// const HWTRef = ref<ComponentPublicInstance | null>(null)
+
+onMounted(() => {
+  console.log(HWTRef.value)
+})
+
+</script>
 
 <style scoped>
 .logo {
