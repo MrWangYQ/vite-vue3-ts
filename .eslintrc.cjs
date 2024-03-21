@@ -32,5 +32,14 @@ module.exports = {
         "vue",
     ],
     "rules": {
-    }
+        "vue/no-mutating-props": "off"
+    },
+    "overrides": [
+        {
+            files: ['src/api/**/*.ts'],
+            rules: {
+                camelcase: 'off' // 关闭驼峰命名
+            }
+        }
+    ], // 重写规则 
 }

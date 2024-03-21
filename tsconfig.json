@@ -24,6 +24,11 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"], // 未设置 "baseUrl" 时，不允许使用非相对路径。是否忘记了前导 "./"，所以添加一个baseUrl
+    }
+
     // "types": ["vite/client"]
   },
   "include": ["src/*", "src/**/*.ts", "src/**/*.js", "src/**/*.tsx", "src/**/*.jsx", "src/**/*.vue"],

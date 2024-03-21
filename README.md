@@ -87,3 +87,21 @@ composables 对组合式 api 封装的函数
       Run the linter on save (onSave) or on type (onType)
       onType / onSave  实时/保存(编辑器里的辅助验证)
 3、安装 Volar 插件 适配 vue3 + ts 
+
+
+
+<template>
+<div>
+  xxx
+</div>
+</template>
+
+<script setup lang="ts">
+defineOptions({
+  name: 'appHeader'
+})
+</script>
+
+<style lang="scss" scoped>
+
+</style>
